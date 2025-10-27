@@ -5,23 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Plane } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import TypewriterText from "./animated-text";
 
 export default function Hero() {
-  const [currentTagline, setCurrentTagline] = useState(0);
-  const taglines = [
-    "Discover. Travel. Repeat.",
-    "Turning Dreams into Destinations.",
-    "Explore Beyond Boundaries.",
-    "Adventure Awaits You.",
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTagline((prev) => (prev + 1) % taglines.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
@@ -33,7 +19,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="text-center lg:text-left">
-            <div className="my-6 md: mt-0">
+            <div className="my-6 lg:mt-0">
               <span className="inline-block px-4 py-2 bg-gradient-to-r from-orange-500/10 to-amber-500/10 rounded-full text-sm font-medium text-orange-700 mb-4">
                 Discover the joy of travel
               </span>
@@ -43,9 +29,7 @@ export default function Hero() {
                   Travel Partner
                 </span>
               </h1>
-              <p className="text-xl text-gray-600 max-w-2xl mb-8">
-                {taglines[currentTagline]}
-              </p>
+              <TypewriterText />
               <p className="text-lg text-gray-600 max-w-2xl mb-8">
                 From tropical getaways to mountain adventures, we curate
                 personalized experiences that help you explore, relax, and
