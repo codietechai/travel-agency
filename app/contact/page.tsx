@@ -2,7 +2,13 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -27,14 +33,17 @@ export default function ContactPage() {
 
     toast({
       title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+      description:
+        "Thank you for contacting us. We'll get back to you within 24 hours.",
     });
 
     setFormData({ name: "", email: "", phone: "", message: "" });
     setIsSubmitting(false);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
@@ -69,7 +78,8 @@ export default function ContactPage() {
       <section
         className="relative h-[400px] flex items-center justify-center bg-cover bg-center"
         style={{
-          backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/7709239/pexels-photo-7709239.jpeg?auto=compress&cs=tinysrgb&w=1920')",
+          backgroundImage:
+            "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/7709239/pexels-photo-7709239.jpeg?auto=compress&cs=tinysrgb&w=1920')",
         }}
       >
         <div className="text-center text-white px-4">
@@ -84,9 +94,12 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Get In Touch</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Get In Touch
+              </h2>
               <p className="text-lg text-gray-700 mb-8">
-                Have questions about our services? Fill out the form and our team will get back to you within 24 hours.
+                Have questions about our services? Fill out the form and our
+                team will get back to you within 24 hours.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
@@ -96,12 +109,16 @@ export default function ContactPage() {
                     <Card key={index} className="border-2">
                       <CardContent className="pt-6">
                         <div className="flex items-start space-x-3">
-                          <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <Icon className="h-5 w-5 text-red-600" />
+                          <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Icon className="h-5 w-5 text-orange-600" />
                           </div>
                           <div>
-                            <h3 className="font-semibold text-gray-900 mb-1">{info.title}</h3>
-                            <p className="text-sm text-gray-700">{info.content}</p>
+                            <h3 className="font-semibold text-gray-900 mb-1">
+                              {info.title}
+                            </h3>
+                            <p className="text-sm text-gray-700">
+                              {info.content}
+                            </p>
                           </div>
                         </div>
                       </CardContent>
@@ -114,7 +131,9 @@ export default function ContactPage() {
             <Card className="border-2">
               <CardHeader>
                 <CardTitle className="text-2xl">Send Us a Message</CardTitle>
-                <CardDescription>Fill out the form below and we'll respond as soon as possible</CardDescription>
+                <CardDescription>
+                  Fill out the form below and we'll respond as soon as possible
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -174,7 +193,7 @@ export default function ContactPage() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-red-600 hover:bg-red-700"
+                    className="w-full bg-orange-600 hover:bg-orange-700"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
@@ -190,9 +209,14 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Find Us</h2>
-            <p className="text-xl text-gray-600">Visit our office for a personal consultation</p>
+            <p className="text-xl text-gray-600">
+              Visit our office for a personal consultation
+            </p>
           </div>
-          <div className="rounded-lg overflow-hidden shadow-lg" style={{ height: "450px" }}>
+          <div
+            className="rounded-lg overflow-hidden shadow-lg"
+            style={{ height: "450px" }}
+          >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2412648718453!2d-73.98731492346442!3d40.75889703525528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
               width="100%"
